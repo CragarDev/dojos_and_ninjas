@@ -10,7 +10,7 @@ from flask_app.models.temp_model import Temp
 def users():
 
     print("Where...HOME--READ")
-    return render_template("uindex.html")
+    return render_template("index.html")
 
 
 # * ===========================================

@@ -1,0 +1,117 @@
+
+Craig Burke - dojos and ninjas
+
+
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES('Karate Kids',NOW(), NOW());
+
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES('Just Belt Me',NOW(), NOW());
+
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES('Bobs Martial Arts Emporium',NOW(), NOW());
+
+
+'1','Karate Kids','2022-03-16 00:06:08','2022-03-16 00:06:08'
+'2','Just Belt Me','2022-03-16 00:06:08','2022-03-16 00:06:08'
+'3','Bobs Martial Arts Emporium','2022-03-16 00:06:08','2022-03-16 00:06:08'
+
+
+DELETE FROM dojos WHERE id = 1;
+DELETE FROM dojos WHERE id = 2;
+DELETE FROM dojos WHERE id = 3;
+
+---
+
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES('Master Ques Room',NOW(), NOW());
+
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES('Liberty Glass House',NOW(), NOW());
+
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES('Try It You\'ll Like It',NOW(), NOW());
+
+'4','Master Ques Room','2022-03-16 00:09:29','2022-03-16 00:09:29'
+'5','Liberty Glass House','2022-03-16 00:09:29','2022-03-16 00:09:29'
+'6','Try It You\'ll Like It','2022-03-16 00:09:29','2022-03-16 00:09:29'
+
+
+
+
+INSERT INTO ninjas (first_name,last_name, age,dojo_id, created_at, updated_at)
+VALUES('Timmy', 'Tantrum', 12, 1, NOW(), NOW());
+
+INSERT INTO ninjas (first_name,last_name, age,dojo_id, created_at, updated_at)
+VALUES('Johnny', 'Small', 10, 2, NOW(), NOW());
+
+INSERT INTO ninjas (first_name,last_name, age,dojo_id, created_at, updated_at)
+VALUES('Nancy', 'Butterfield', 13, 3, NOW(), NOW());
+
+
+
+'1','Timmy','Tantrum','12','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+'2','Johnny','Small','10','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+'3','Nancy','Butterfield','13','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+
+
+
+INSERT INTO ninjas (first_name,last_name, age,dojo_id, created_at, updated_at)
+VALUES('Sara', 'Smiles', 8, 5, NOW(), NOW());
+
+INSERT INTO ninjas (first_name,last_name, age,dojo_id, created_at, updated_at)
+VALUES('Betty', 'Black', 10, 5, NOW(), NOW());
+
+INSERT INTO ninjas (first_name,last_name, age,dojo_id, created_at, updated_at)
+VALUES('Robert', 'Johnson', 9, 5, NOW(), NOW());
+
+
+'1','Timmy','Tantrum','12','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+'2','Johnny','Small','10','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+'3','Nancy','Butterfield','13','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+'4','Sara','Smiles','8','2022-03-16 00:25:59','2022-03-16 00:25:59','5'
+'5','Betty','Black','10','2022-03-16 00:25:59','2022-03-16 00:25:59','5'
+'6','Robert','Johnson','9','2022-03-16 00:25:59','2022-03-16 00:25:59','5'
+
+
+
+INSERT INTO ninjas (first_name,last_name, age,dojo_id, created_at, updated_at)
+VALUES('Aaron', 'Timberlane', 12, 6, NOW(), NOW());
+
+INSERT INTO ninjas (first_name,last_name, age,dojo_id, created_at, updated_at)
+VALUES('Rocky', 'Rhodes', 11, 6, NOW(), NOW());
+
+INSERT INTO ninjas (first_name,last_name, age,dojo_id, created_at, updated_at)
+VALUES('Cecelia', 'Portent', 11, 6, NOW(), NOW());
+
+
+'1','Timmy','Tantrum','12','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+'2','Johnny','Small','10','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+'3','Nancy','Butterfield','13','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+'4','Sara','Smiles','8','2022-03-16 00:25:59','2022-03-16 00:25:59','5'
+'5','Betty','Black','10','2022-03-16 00:25:59','2022-03-16 00:25:59','5'
+'6','Robert','Johnson','9','2022-03-16 00:25:59','2022-03-16 00:25:59','5'
+'7','Aaron','Timberlane','12','2022-03-16 00:27:35','2022-03-16 00:27:35','6'
+'8','Rocky','Rhodes','11','2022-03-16 00:27:35','2022-03-16 00:27:35','6'
+'9','Cecelia','Portent','11','2022-03-16 00:27:35','2022-03-16 00:27:35','6'
+
+
+SELECT *
+FROM ninjas
+WHERE dojo_id = 4;
+
+
+'1','Timmy','Tantrum','12','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+'2','Johnny','Small','10','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+'3','Nancy','Butterfield','13','2022-03-16 00:24:20','2022-03-16 00:24:20','4'
+
+
+
+SELECT ninjas.id AS "Ninja ID",ninjas.first_name AS "Ninja Name", name AS "Dojo"
+FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+ORDER BY ninjas.id DESC LIMIT 0,1
+
+
+'9','Cecelia','Try It You\'ll Like It'
+
