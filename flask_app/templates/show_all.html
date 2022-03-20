@@ -17,6 +17,7 @@
     <p class="w-100"></p>
     <div class="container rounded-3 w-50">
         <a class="btn btn-primary mt-3 mb-5" href="/dojos">Home</a>
+        
     </div>
     <p class="w-100"></p>
 
@@ -63,6 +64,7 @@
                         <th scope="col">Id</th>
                         <th scope="col">Full Name</th>
                         <th scope="col">Age</th>
+                        <th scope="col">Dojo</th>
                         <th scope="col">Created At</th>
                         <th scope="col">Updated At</th>
                     </thead>
@@ -72,6 +74,15 @@
                             <td scope="row">{{ ninja.id}}</td>
                             <th scope="row">{{ ninja.first_name }} {{ ninja.last_name }}</th>
                             <td scope="row">{{ ninja.age }}</td>
+
+                            {% for dojo in show_all_dojos %}
+                            {% if dojo.id == ninja.dojo_id %}
+                            <td scope="row"> <a class="text-decoration-none text-capitalize h5"
+                                    href="/dojo_ninjas/{{ dojo.id }}">{{ dojo.id }} - {{dojo.name}}</a></td>
+                            {% endif %}
+                            {% endfor %}
+
+
                             <td scope="row">{{ ninja.created_at }}</td>
                             <td scope="row">{{ ninja.updated_at }}</td>
                         </tr>

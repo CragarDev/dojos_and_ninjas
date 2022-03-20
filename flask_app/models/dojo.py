@@ -55,6 +55,7 @@ class Dojo:
                 "first_name": data["first_name"],
                 "last_name": data["last_name"],
                 "age": data["age"],
+                "dojo_id": data["dojo_id"],
                 "created_at": data["ninjas.created_at"],
                 "updated_at": data["ninjas.updated_at"],
             }

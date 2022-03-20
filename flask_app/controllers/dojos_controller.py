@@ -47,7 +47,7 @@ def dojo_new():
 # * ===========================================
 @app.route("/dojo_ninjas/<dojo_id>")
 def dojo_ninjas(dojo_id):
-
+    print(f"============HERE - the dojo_id sent out:  {dojo_id}")
     query_data = {
         "dojo_id": dojo_id
     }
