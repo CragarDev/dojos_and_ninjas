@@ -1,8 +1,7 @@
 from flask_app import app
 
 # t- ---- INSERT CONTROLLERS HERE ------------------
-# from flask_app.controllers import temp_controller
-from flask_app.controllers import dojos_controller
+from flask_app.controllers import dojos_controller, ninjas_controller
 
 #
 

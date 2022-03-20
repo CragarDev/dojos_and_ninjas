@@ -2,41 +2,36 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 
 
-class Dojo:
+class Ninja:
     # Change Database for this model
     db = "dojos_and_ninjas_schema"
 
     def __init__(self, data):
         self.id = data['id']
-        self.name = data['name']
+        self.first_name = data['first_name']
+        self.last_name = data['last_name']
+        self.age = data['age']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
     # UPDATE methods
 
     @classmethod
-    def get_all_dojos(cls):
-        query = "SELECT * FROM dojos;"
-        # make sure to call the connectToMySQL function with the schema you are targeting.
-        results = connectToMySQL(cls.db).query_db(query)
-        # Create an empty list to append our instances of friends
-        dojos = []
-        # Iterate over the db results and create instances of friends with cls.
-        for dojo in results:
-            dojos.append(cls(dojo))
-        return dojos
-
-    @classmethod
-    def get_one_dojo(cls, data):
-        query = "SELECT * FROM dojos WHERE id = %(id)s;"
+    def get_all_ninjas(cls, data):
+        print("CLASS METHOD data-id", data["id"])
+        query = "SELECT * FROM ninjas LEFT JOIN dojos ON ninjas.dojo_id = dojos.id WHERE dojos.id = %(id)s;"
         # make sure to call the connectToMySQL function with the schema you are targeting.
         results = connectToMySQL(cls.db).query_db(query, data)
-        dojo = cls(results[0])
-        return dojo
+        # Create an empty list to append our instances of friends
+        ninjas = []
+        # Iterate over the db results and create instances of friends with cls.
+        for ninja in results:
+            ninjas.append(cls(ninja))
+        return ninjas
 
     @classmethod
-    def create_new_dojo(cls, data):
-        query = "INSERT INTO dojos ( name , created_at, updated_at ) VALUES ( %(name)s , NOW() , NOW() );"
+    def create_new_ninja(cls, data):
+        query = "INSERT INTO ninjas ( first_name , last_name, age, dojo_id, created_at, updated_at ) VALUES ( %(first_name)s,%(last_name)s,%(age)s, %(dojo_id)s, NOW() , NOW() );"
         results = connectToMySQL(cls.db).query_db(query, data)
         return results
 
