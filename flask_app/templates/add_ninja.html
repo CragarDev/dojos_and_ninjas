@@ -24,7 +24,7 @@
     <div class="container bg-light text-dark rounded-3 p-2 w-50">
       <h2>New Ninja</h2>
       <p class=" w-100"></p>
-      
+
       <!-- Form Action  -->
       <form action="/add_ninja/new" method="post">
 
@@ -32,7 +32,7 @@
           <label for="dojo_id" class="form-label h4">Dojo Selection</label>
           <select name="dojo_id">
             {% for dojo in all_dojos %}
-            <option value="{{ dojo.id }}">{{ dojo.name }}</option>
+            <option value="{{ dojo.id }}">{{ dojo.id }} - {{ dojo.name }}</option>
             {% endfor %}
           </select>
         </div>

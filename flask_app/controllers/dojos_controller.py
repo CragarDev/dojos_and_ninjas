@@ -45,7 +45,7 @@ def dojo_new():
 # * ===========================================
 # ? RENDER / dojo - list of ninjas
 # * ===========================================
-@app.route("/dojo_ninjas/<int:dojo_id>")
+@app.route("/dojo_ninjas/<dojo_id>")
 def dojo_ninjas(dojo_id):
 
     query_data = {

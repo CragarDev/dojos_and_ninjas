@@ -33,6 +33,10 @@ def add_ninja_new():
         "dojo_id": request.form["dojo_id"]
     }
 
-    ninja_id = Ninja.create_new_ninja(query_data)
+    new_ninja_id = Ninja.create_new_ninja(query_data)
+    print("------new_ninja_id------->>>", new_ninja_id)
 
-    return redirect("/dojo")
+    the_dojo_id = query_data["dojo_id"]
+    print("------the_dojo_id------->>>", the_dojo_id)
+
+    return redirect(f"/dojo_ninjas/{the_dojo_id}")
