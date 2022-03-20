@@ -1,0 +1,40 @@
+[
+	{
+		"id" : 2,
+		"first_name" : "Timmy",
+		"last_name" : "Tantrum",
+		"age" : 12,
+		"created_at" : "2022-03-19 16:24:25",
+		"updated_at" : "2022-03-19 16:24:25",
+		"dojo_id" : 1,
+		
+		"id" : 1,
+		"name" : "Karate Kids",
+		"created_at" : "2022-03-19 16:22:47",
+		"updated_at" : "2022-03-19 16:22:47"
+	},
+
+
+	{
+
+		"ninjas.id" : 2,
+		"first_name" : "Timmy",
+		"last_name" : "Tantrum",
+		"age" : 12,
+		"ninjas.created_at" : "2022-03-19 16:24:25",
+		"ninjas.updated_at" : "2022-03-19 16:24:25",
+		"dojo_id" : 1,
+		"id" : 1,
+		"name" : "Karate Kids",
+		"created_at" : "2022-03-19 16:22:47",
+		"updated_at" : "2022-03-19 16:22:47"
+	},
+
+
+
+
+
+
+
+
+]

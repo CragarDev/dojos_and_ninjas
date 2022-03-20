@@ -1,0 +1,15 @@
+{
+  "id": 3,
+  "name": "Bobs Martial Arts Emporium",
+  "created_at": "datetime.datetime(2022, 3, 19, 16, 22, 47)",
+  "updated_at": "datetime.datetime(2022, 3, 19, 16, 22, 47)",
+  "ninjas.id": 4,
+  "first_name": "Nancy",
+  "last_name": "Butterfield",
+  "age": 13,
+  "ninjas.created_at": "datetime.datetime(2022, 3, 19, 16, 24, 25)",
+  "ninjas.updated_at": "datetime.datetime(2022, 3, 19, 16, 24, 25)",
+  "dojo_id": 3
+}
+
+{'id': 23, 'name': 'Help me', 'created_at': datetime.datetime(2022, 3, 19, 23, 10, 14), 'updated_at': datetime.datetime(2022, 3, 19, 23, 10, 14), 'ninjas.id': None, 'first_name': None, 'last_name': None, 'age': None, 'ninjas.created_at': None, 'ninjas.updated_at': None, 'dojo_id': None}

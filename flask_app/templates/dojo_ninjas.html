@@ -13,7 +13,7 @@
   <!-- start -- MAIN -->
   <div class="container bg-warning text-dark rounded-3 w-25">
 
-    <h1 class="mt-1">{{ dojo.name }} Ninjas</h1>
+    <h1 class="mt-1">{{ dojo_with_ninjas.name }} Ninjas</h1>
 
   </div>
   <main class="container flex mt-4">
@@ -27,8 +27,8 @@
 
       <p class="w-100"></p>
       <!-- == table == -->
-      <!-- <div class="container rounded-3">
-        <table class="table table-borderless">
+      <div class="container rounded-3">
+        <table class="table">
           <thead>
             <tr>
               <th scope="col">First Name</th>
@@ -37,7 +37,7 @@
             </tr>
           </thead>
           <tbody>
-            {% for ninja in all_ninjas %}
+            {% for ninja in dojo_with_ninjas.ninjas %}
             <tr>
               <td>{{ ninja.first_name }}</td>
               <td>{{ ninja.last_name }}</td>
@@ -47,7 +47,7 @@
           </tbody>
         </table>
         <p class="w-100"></p>
-      </div> -->
+      </div>
     </div>
     <p class="w-100"></p>
 

@@ -20,11 +20,22 @@
 
     <p class=" w-100"></p>
 
-    <!-- SECTION:  Creating a new Dojo -->
+    <!-- SECTION:  Creating a new Ninja -->
     <div class="container bg-light text-dark rounded-3 p-2 w-50">
       <h2>New Ninja</h2>
       <p class=" w-100"></p>
+      
+      <!-- Form Action  -->
       <form action="/add_ninja/new" method="post">
+
+        <div class="mb-3">
+          <label for="dojo_id" class="form-label h4">Dojo Selection</label>
+          <select name="dojo_id">
+            {% for dojo in all_dojos %}
+            <option value="{{ dojo.id }}">{{ dojo.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
 
         <div class="mb-3">
           <label for="first_name" class="form-label">First Name</label>
@@ -41,17 +52,11 @@
           <input type="number" name="age" class="form-control">
         </div>
 
-        <div class="mb-3">
-          <label for="dojo_id" class="form-label">Dojo Selection</label>
-          <select name="dojo_id">
-            {% for dojo in all_dojos %}
-            <option value="{{ dojo.id }}">{{ dojo.name }}</option>
-            {% endfor %}
-          </select>
-        </div>
 
-
+        <!--  Submit Button -->
         <button type="submit" class="btn btn-warning mt-5 mb-5">Add Ninja</button>
+
+        <!-- Home button -->
         <a class="btn btn-primary mt-5 mb-5 float-end" href="/dojos">Home</a>
       </form>
     </div>

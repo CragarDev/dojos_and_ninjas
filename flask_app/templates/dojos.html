@@ -15,13 +15,19 @@
 
     <h1 class="mt-1">Dojos and Ninjas</h1>
 
+    <div class="container float-start">
+      <p class="w-100"></p>
+      <a class="btn btn-success text-light mt-3 mb-5" href="/show_all">Show All</a>
+      <p class="w-100"></p>
+    </div>
+
   </div>
   <main class="container d-flex mt-4">
 
     <p class=" w-100"></p>
 
-    <!-- SECTION:  Creating a new Dojo -->
-    <div class="container bg-light text-dark rounded-3 p-2 w-100">
+    <!-- SECTION:  Create a new Dojo -->
+    <div class="container bg-light text-dark rounded-3 p-2 w-100 h-25">
       <h2>New Dojo</h2>
       <p class=" w-100"></p>
       <form action="/dojo_new" method="post">
@@ -35,23 +41,20 @@
 
     <p class="w-25"></p>
 
-    <!-- SECTION:  List of Dojos and button for ninjas -->
-    <div class="container bg-info text-dark rounded-8 w-100 ">
-      <h2>All Dojos</h2>
-      <p class=" w-25"></p>
+    <!-- SECTION:  List of Dojos and button for Add ninja -->
+    <div class="container bg-dark text-warning rounded-8 w-100 border border-warning">
+      <h1 class="bg-warning text-black w-100 text-center">All Dojos</h1>
 
       <p class="w-100"></p>
 
-      <!-- == table == -->
       <div class="container rounded-3">
         <table class="table table-borderless">
 
           <tbody>
             {% for dojo in all_dojos %}
             <tr>
-              <td scope="row"><a class="text-white text-decoration-none" href="/dojo_ninjas/{{ dojo.id }}">{{
-                  dojo.name
-                  }}</a></td>
+              <td scope="row"><a class="text-warning text-decoration-none text-capitalize h5"
+                  href="/dojo_ninjas/{{ dojo.id }}">{{dojo.name}}</a></td>
             </tr>
 
             {% endfor %}
@@ -59,13 +62,14 @@
         </table>
         <p class="w-100"></p>
       </div>
-
-      <div class="container float-end">
+      <div class="container w-100">
         <p class="w-100"></p>
-        <a class="btn btn-primary mt-3 mb-5" href="/add_ninja">Add Ninja</a>
+        <a class="btn btn-primary mt-3 mb-5 w-100" href="/add_ninja">Add Ninja</a>
         <p class="w-100"></p>
       </div>
     </div>
+
+
 
     <p class="w-100"></p>
 

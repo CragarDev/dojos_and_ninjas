@@ -10,8 +10,7 @@ from flask_app.models.ninja import Ninja
 @app.route('/')
 def index():
 
-    print("Where...HOME--READ")
-    return render_template("index.html")
+    return redirect("/dojos")
 
 
 # * ===========================================
@@ -22,12 +21,6 @@ def dojos():
 
     all_dojos = Dojo.get_all_dojos()
 
-    print(all_dojos)
-    for dojo in all_dojos:
-        print(dojo.name)
-
-    print("Where...DOJOS--READ")
-    # return render_template("dojos.html")
     return render_template("dojos.html", all_dojos=all_dojos)
 
 
@@ -46,8 +39,34 @@ def dojo_new():
 
     Dojo.create_new_dojo(query_data)
 
-    print("Where...CREATE DOJO")
     return redirect("/dojos")
+
+
+# * ===========================================
+# ? RENDER / dojo - list of ninjas
+# * ===========================================
+@app.route("/dojo_ninjas/<int:dojo_id>")
+def dojo_ninjas(dojo_id):
+
+    query_data = {
+        "dojo_id": dojo_id
+    }
+    dojo_with_ninjas = Dojo.get_dojo_with_ninjas(query_data)
+
+    return render_template("dojo_ninjas.html", dojo_with_ninjas=dojo_with_ninjas)
+
+# * ===========================================
+# ? RENDER / Show all dojos and ninjas
+# * ===========================================
+
+
+@app.route("/show_all")
+def show_all():
+
+    show_all_dojos = Dojo.get_all_dojos()
+    show_all_ninjas = Ninja.show_all_ninjas()
+
+    return render_template("/show_all.html", show_all_dojos=show_all_dojos, show_all_ninjas=show_all_ninjas)
 
 
 # * ===========================================
